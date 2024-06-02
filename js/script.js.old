@@ -1,0 +1,67 @@
+//intro
+
+//console.dir(elements);
+
+console.log(document.querySelector('header'));
+
+const element = document.querySelector('div'),
+    elements = document.querySelectorAll('div');
+
+// console.log(element);
+// console.log(elements[0]);
+
+// for (let i = 0; i < elements.length; i++) {
+//     console.log(elements[i])
+// };
+
+elements.forEach((elem, nomer, massiv) => {
+    console.log(elem);
+    console.log(nomer);
+    console.log(massiv);
+});
+
+//lesson1
+
+const contents = document.querySelectorAll('.program-line__content');
+
+contents.forEach((elem, num, array) => {
+    //    console.log(elem);
+    const title = elem.querySelector('.program-line__title');
+    const descr = elem.querySelector('.program-line__descr');
+
+    // console.log(num);
+    // console.dir(title);
+    // console.log(descr);
+    // console.log(descr.classList);
+
+    // title.onclick = () => {
+    //     console.log('Кликнули на ');
+    //     console.log(title);
+    // }
+
+    // title.onclick = () => {
+    //     console.log('Кликнули на ');
+    //     console.log('click2');
+    // }
+
+    // title.addEventListener('click', () => {
+    //     console.log(num + 1);
+    // });
+
+    title.addEventListener('click', () => {
+        // console.log(title);
+        // console.log(num + 1);
+        array.forEach((e, n) => {
+            const d = e.querySelector('.program-line__descr');
+            if (num != n) {
+                d.classList.remove('active');
+            };
+            console.log(n + 1);
+        });
+        descr.classList.toggle('active');
+    });
+
+    // title.addEventListener('click', () => {
+    //     console.dir(descr);
+    // });
+});
